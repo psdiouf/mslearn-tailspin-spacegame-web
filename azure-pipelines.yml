@@ -1,3 +1,10 @@
 pool: MyAgentPool
+
 steps:
 - bash: echo hello world
+
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Abonnement Plateformes MSDN(2c2b7921-5234-44c3-a0ca-c72374e64a74)'
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
